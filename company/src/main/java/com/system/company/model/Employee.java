@@ -70,6 +70,22 @@ public class Employee {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public List<Project> getProjet() {
+		return projet;
+	}
+
+	public void setProjet(List<Project> projet) {
+		this.projet = projet;
+	}
 	
 	
 }
