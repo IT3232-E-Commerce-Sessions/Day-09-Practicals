@@ -23,9 +23,21 @@ public class DepartmentService {
 		return repo.findById(id).get();
 	}
 	
-	public String addDept(@RequestBody Department department) {
-		repo.save(department);
-		return "New Department Added";
+	public Department addDept(Department department) {
+		return repo.save(department);
+	}
+	
+	public void deleteDept(int id) {
+		repo.deleteById(id);
+	}
+	
+	public Department updateDept(int id, Department updatedDepartment) {
+	    Department existingDept = repo.findById(id).orElse(null);
+	    if (existingDept != null) {
+	        existingDept.setName(updatedDepartment.getName());
+	        return repo.save(existingDept);
+	    }
+	    return null; 
 	}
 	
 }
